@@ -1,10 +1,10 @@
 plugins {
-
+	id 'org.springframework.boot' version '2.1.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 }
 
-group = 'se.magnus.util'
+group = 'se.magnus.microservices.composite.product'
 version = '1.0.0-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -13,11 +13,10 @@ repositories {
 }
 
 dependencies {
+	implementation project(':api')
+	implementation project(':util')
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
-}
-
-dependencyManagement {
-	imports { mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.0.RELEASE") }
 }
