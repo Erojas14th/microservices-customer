@@ -1,5 +1,11 @@
 server.port: 7001
 
+#Mongo
+spring.data.mongodb:
+  host: localhost
+  port: 27017
+  database: product-db
+#Logger
 logging:
   level:
     root: INFO
@@ -8,5 +14,8 @@ logging:
 ---
 spring:
   profiles: docker
+
+#Mongo
+spring.data.mongodb.host: mongodb
 
 server.port: 8080
